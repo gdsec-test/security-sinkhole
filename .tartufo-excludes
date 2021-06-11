@@ -1,0 +1,4 @@
+(.*)package-lock.json
+.github/workflows
+logs
+cert

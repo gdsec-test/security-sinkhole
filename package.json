@@ -1,0 +1,29 @@
+{
+  "name": "security-sinkhole",
+  "version": "1.0.0",
+  "description": "Sinkhole to collect masked credentials",
+  "main": "index.js",
+  "scripts": {
+    "local": "node src/server.js",
+    "server": "node server.js",
+    "docker": "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 764525110978.dkr.ecr.us-west-2.amazonaws.com && docker build -t sinkhole . && docker run --rm -it -p 443:443 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN sinkhole",
+    "test": "tartufo --verbose --pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdcorp-infosec/security-sinkhole.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdcorp-infosec/security-sinkhole/issues"
+  },
+  "homepage": "https://github.com/gdcorp-infosec/security-sinkhole#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mystiko": "^0.2.0"
+  },
+  "devDependencies": {
+    "tartufo": "^1.1.6"
+  }
+}

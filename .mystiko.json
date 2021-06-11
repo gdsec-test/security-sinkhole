@@ -1,0 +1,19 @@
+{
+  "environments": {
+    "dev": {
+      "region": "us-east-1",
+      "secrets": [
+        {
+          "name": "sinkhole-ssl-dev-crt",
+          "target": "file",
+          "filename": "cert/server.crt"
+        },
+        {
+          "name": "sinkhole-ssl-dev-key",
+          "target": "file",
+          "filename": "cert/server.key"
+        }
+      ]
+    }
+  }
+}
