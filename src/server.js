@@ -19,14 +19,14 @@ mystiko({ env: 'dev' }).then(() => {
   } catch (err) {
     console.error(err);
   }
-  
+
   const app = express();
   app.use(express.json());
-  
+
   app.get('/', (req, res, next) => {
     res.send('Server is running');
   });
-  
+
   app.post('/hole', (req, res, next) => {
     const currentDate = new Date().toISOString().split("T")[0];
     if (typeof req.body !== 'object') {
@@ -53,4 +53,3 @@ mystiko({ env: 'dev' }).then(() => {
 }).catch(err => {
   console.log(err);
 });
-
