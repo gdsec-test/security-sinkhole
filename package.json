@@ -6,7 +6,7 @@
   "scripts": {
     "local": "node src/server.js",
     "server": "node server.js",
-    "docker": "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 764525110978.dkr.ecr.us-west-2.amazonaws.com && docker build -t sinkhole . && docker run --rm -it -p 54387:443 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN sinkhole",
+    "docker": "aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 764525110978.dkr.ecr.us-west-2.amazonaws.com && docker build -t sinkhole . && docker run --rm -it -p 54387:54387 -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN sinkhole",
     "deploy": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 226955763576.dkr.ecr.us-east-1.amazonaws.com && docker build -t 226955763576.dkr.ecr.us-east-1.amazonaws.com/sinkhole-credentials . && docker push 226955763576.dkr.ecr.us-east-1.amazonaws.com/sinkhole-credentials"
   },
   "repository": {
@@ -23,7 +23,5 @@
     "express": "^4.17.1",
     "mystiko": "^0.2.0"
   },
-  "devDependencies": {
-    "tartufo": "^1.1.6"
-  }
+  "devDependencies": {}
 }

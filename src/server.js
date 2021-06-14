@@ -45,7 +45,7 @@ mystiko({ env: 'dev' }).then(() => {
     cert,
     key
   };
-  const port = 443;
+  const port = 54387;
   const httpsServer = https.createServer(options, app);
   httpsServer.listen(port, () => {
     console.log("Sinkhole server started on port:" + port);

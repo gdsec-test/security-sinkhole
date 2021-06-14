@@ -11,6 +11,6 @@ RUN npm i
 
 CMD npm run server
 
-EXPOSE 443
+EXPOSE 54387
 
 USER nobody
